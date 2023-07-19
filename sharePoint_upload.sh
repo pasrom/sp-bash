@@ -34,7 +34,7 @@ done < rstoken
 curl -c cookies -X POST -d @stoken https://[ you ].sharepoint.com/_forms/default.aspx?wa=wsignin1.0
 
 # Get the request digest
-curl -b cookies -d -X POST https://[ you ].sharepoint.com/sites/${SITENAME}/_api/contextinfo > rdigest
+curl -b cookies -X POST https://[ you ].sharepoint.com/sites/${SITENAME}/_api/contextinfo > rdigest
 
 # Parse request digest response (rdigest)
 while read_dom; do
