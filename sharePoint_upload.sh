@@ -51,7 +51,7 @@ FILENAME=$(echo $1 | sed 's|.*\/||')
 
 curl -b cookies \
      -H "X-RequestDigest: ${DIGEST}" \
-     -H "Authorization: Bearer + ${stoken}" \
+     -H "Authorization: Bearer + $(cat stoken)" \
      -H "Accept: application/json;odata=verbose" \
      -H "Content-Type: multipart/form-data" \
      -T "${1}" \
